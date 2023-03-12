@@ -2,17 +2,16 @@ import axios from "axios";
 import type { MoviesList } from "../entitles/MoviesList";
 import type movie from "../entitles/Movie";
 
-const KEY = "d31d01b9";
-const URL = "http://www.omdbapi.com/?apikey=";
+
 export const getmovies = async (search: string): Promise<MoviesList> => {
   const response = await axios.get(
-    `${URL}${KEY}&s=${search}`
+    `${process.env.API_URL}${process.env.API_KEY}&s=${search}`
   );
   return response.data;
 };
 export const getmovie = async (id: string): Promise<movie> => {
   const response = await axios.get(
-    `${URL}${KEY}&i=${id}&plot=full`
+    `${process.env.API_URL}${process.env.API_KEY}&i=${id}&plot=full`
   );
   return response.data;
 }

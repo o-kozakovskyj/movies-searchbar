@@ -8,6 +8,10 @@ const nextConfig = {
       'm.media-amazon.com',
     ],
   },
+  env: {
+    API_URL: "http://www.omdbapi.com/?apikey=",
+    API_KEY: "d31d01b9",
+  },
 }
 
 module.exports = nextConfig
