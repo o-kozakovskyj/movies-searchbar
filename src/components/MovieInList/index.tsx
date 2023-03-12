@@ -1,12 +1,12 @@
 import { Skeleton, Typography } from "@mui/material";
-import type Moovie from "../../entitles/Moovie";
 import Image from "next/image";
-import * as Styled from "./MoovieInList.styled";
+import Movie from "../../entitles/movie";
+import * as Styled from "./MovieInList.styled";
 
-type MoovieProps = {
-  moovie: Moovie
+type MovieProps = {
+  movie: Movie
 }
-const MoovieInList: React.FC<MoovieProps> = ({ moovie }) => {
+const MovieInList: React.FC<MovieProps> = ({ movie }) => {
   const noPoster = <>
     <Skeleton variant="rectangular" width="100px" height="60px" />
     <Typography variant="h6">
@@ -14,25 +14,25 @@ const MoovieInList: React.FC<MoovieProps> = ({ moovie }) => {
     </Typography>
     <Skeleton variant="rectangular" width="100px" height="60px" />
   </>
-  const poster = moovie.Poster === "N/A"
+  const poster = movie.Poster === "N/A"
     ? noPoster
-    : <Image src={moovie.Poster} alt={moovie.Title} height={150} width={100} />
+    : <Image src={movie.Poster} alt={movie.Title} height={150} width={100} />
 
   return (
-    <Styled.MooviesListBox>
+    <Styled.moviesListBox>
       <Styled.ImageBox>
         {poster}
         <Styled.Title>
-          {moovie.Actors}
+          {movie.Actors}
         </Styled.Title>
         <Styled.Title>
-          {moovie.Title}
+          {movie.Title}
         </Styled.Title>
         <Styled.Year>
-          {moovie.Year}
+          {movie.Year}
         </Styled.Year>
       </Styled.ImageBox>
-    </Styled.MooviesListBox>
+    </Styled.moviesListBox>
   )
 }
-export default MoovieInList;
+export default MovieInList;

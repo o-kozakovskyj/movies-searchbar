@@ -1,7 +1,6 @@
 import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
-import Logo from '../Logo';
 
 export const Header = styled(props => <Box component="header" {...props} />)`
   background-color: #fff;

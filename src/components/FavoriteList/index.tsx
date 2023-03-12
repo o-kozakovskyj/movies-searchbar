@@ -1,7 +1,7 @@
 import { Divider, Link, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { selectFavorites } from "../MooviePage/MoovieSlice";
-import type Moovie from "../../entitles/Moovie";
+import { selectFavorites } from "../MoviePage/MovieSlice";
+import type Movie from "../../entitles/Movie";
 import * as Styled from "./FavoriteList.styled";
 
 const FavoriteList: React.FC = () => {
@@ -13,22 +13,22 @@ const FavoriteList: React.FC = () => {
         My Favorite List
       </Styled.AsideTitle>
       <Divider />
-      {favoriteList.map((moovie: Moovie) => {
+      {favoriteList.map((movie: Movie) => {
         return (
           <Link
-            href={`/${moovie.Title}/${moovie.imdbID}`}
-            key={moovie.imdbID}
+            href={`/${movie.Title}/${movie.imdbID}`}
+            key={movie.imdbID}
           >
             <Styled.LinkAnchor>
-              <Styled.MoovieInfo >
+              <Styled.movieInfo >
                 <Styled.Poster
-                  src={moovie.Poster}
-                  alt={moovie.Title}
+                  src={movie.Poster}
+                  alt={movie.Title}
                 />
                 <Typography>
-                  {moovie.Title}
+                  {movie.Title}
                 </Typography>
-              </Styled.MoovieInfo>
+              </Styled.movieInfo>
             </Styled.LinkAnchor>
           </Link>
         )

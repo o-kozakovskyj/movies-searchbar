@@ -1,13 +1,13 @@
 import { NextPage } from "next";
 import FavoriteList from "../../src/components/FavoriteList";
 import Layout from "../../src/components/Layout";
-import MooviePage from "../../src/components/MooviePage";
+import MoviePage from "../../src/components/MoviePage";
 
 const SerchedMovies: NextPage = () => {
   return (
     <>
       <Layout aside={<FavoriteList />}>
-        <MooviePage />
+        <MoviePage />
       </Layout>
     </>
   )

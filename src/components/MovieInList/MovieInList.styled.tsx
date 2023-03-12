@@ -1,8 +1,7 @@
 import { Box, ListItem, Typography } from "@mui/material";
 import styled from "styled-components";
-import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
 
-export const MooviesListBox = styled(ListItem)`
+export const moviesListBox = styled(ListItem)`
   display: flex;
   overflow: hidden;
   flex-shrink: 2;

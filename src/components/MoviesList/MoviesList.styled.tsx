@@ -1,7 +1,7 @@
 import { List, Typography } from "@mui/material";
 import styled from "styled-components";
 
-export const MooviesListBox = styled(List)`
+export const MoviesListBox = styled(List)`
   display: flex;
   width: 100%;
   flex-wrap: wrap;

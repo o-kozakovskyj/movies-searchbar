@@ -4,7 +4,7 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 import { combineReducers } from "redux";
-import favoritesReducer from '../src/components/MooviePage/MoovieSlice';
+import favoritesReducer from '../src/components/MoviePage/MovieSlice';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
@@ -28,8 +28,8 @@ export const persistor = persistStore(store)
 export type AppDispatch = typeof store.getState;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
-   ReturnType,
-   RootState,
-   unknown,
-   Action<string>
- >;
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;

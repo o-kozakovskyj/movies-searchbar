@@ -1,14 +1,13 @@
 import FavoriteList from '../src/components/FavoriteList';
 import Layout from '../src/components/Layout';
-import SearchBar from '../src/components/SearchBox';
 import type { NextPage } from 'next';
-import MoovieList from '../src/components/MooviesList';
+import MovieList from '../src/components/MoviesList';
 
 const Home: NextPage = () => {
   return (
     <>
       <Layout aside={<FavoriteList />}>
-        <MoovieList/>
+        <MovieList />
       </Layout>
     </>
   )

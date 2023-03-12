@@ -2,7 +2,7 @@ type Rating = {
   Source: string,
   Value: string,
 }
-type Moovie = {
+type Movie = {
   Poster: string;
   Title: string;
   Year: string;
@@ -12,4 +12,4 @@ type Moovie = {
   Plot: string;
   Ratings: Rating[];
 };
-export default Moovie;
+export default Movie;

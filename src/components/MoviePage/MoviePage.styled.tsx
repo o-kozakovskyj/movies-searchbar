@@ -1,7 +1,7 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import styled from "styled-components";
 
-export const MoovieCard = styled(Card)`
+export const movieCard = styled(Card)`
 margin: 0 auto;
 display: flex;
 @media (max-width: 800px) {
@@ -9,7 +9,7 @@ display: flex;
 }
 `;
 
-export const MoovieContent = styled(CardContent)`
+export const movieContent = styled(CardContent)`
 padding: 16px 16px 0 16px;
 `;
 export const SubTitles = styled(Typography)`

@@ -10,7 +10,7 @@ flex-direction: column;
 width: 100%;
 height: 100%;
 `;
-export const MoovieInfo = styled(Box)`
+export const movieInfo = styled(Box)`
   display: flex;
   align-items: center;
   

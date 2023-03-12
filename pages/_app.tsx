@@ -18,7 +18,7 @@ const MyApp: React.FunctionComponent<MyAppProps> = props => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Head>
-          <title>Moovie Tube</title>
+          <title>movie Tube</title>
           <meta name="description" content="Digital Books shop" />
           <link rel="icon" href="/images/favicon.ico" />
         </Head>

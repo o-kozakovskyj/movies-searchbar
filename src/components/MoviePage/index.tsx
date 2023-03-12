@@ -1,17 +1,17 @@
-import { Card, CardMedia, Typography } from "@mui/material";
-import { useRouter } from "next/router";
+import { CardMedia, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getMoovie } from "../../gateways/gateway";
+import { getmovie } from "../../gateways/gateway";
 import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
-import { addToFavorites, deleteFromFavorites, selectFavorites } from "./MoovieSlice";
-import type Moovie from "../../entitles/Moovie";
-import * as Styled from "./MooviePage.styled";
+import { addToFavorites, deleteFromFavorites, selectFavorites } from "../MoviePage/MovieSlice";
+import type movie from "../../entitles/movie";
+import * as Styled from "./MoviePage.styled";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-const MooviePage: React.FC = () => {
-  const moovieId = useRouter().query.moovie as string;
+const MoviePage: React.FC = () => {
+  const movieId = useRouter().query.movie as string;
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
-  const [moovie, setMoovie] = useState<Moovie>({
+  const [movie, setmovie] = useState<movie>({
     Title: "",
     Year: "",
     imdbID: "",
@@ -23,66 +23,66 @@ const MooviePage: React.FC = () => {
   });
   const favoriteList = useSelector(selectFavorites);
   useEffect(() => {
-    if (moovieId) {
-      getMoovie(moovieId).then((res) => {
-        setMoovie(res);
+    if (movieId) {
+      getmovie(movieId).then((res) => {
+        setmovie(res);
       });
     }
-    if(favoriteList.find((moovie: Moovie) => moovie.imdbID === moovieId)) {
+    if (favoriteList.find((movie: movie) => movie.imdbID === movieId)) {
       setIsFavorite(true);
     }
-  }, [moovieId, moovie, isFavorite, favoriteList]);
+  }, [movieId, movie, isFavorite, favoriteList]);
   const dispatch = useDispatch();
   const handleFavorite = () => {
     if (isFavorite) {
       setIsFavorite(false);
-      dispatch(deleteFromFavorites(moovie.imdbID));
+      dispatch(deleteFromFavorites(movie.imdbID));
     } else {
       setIsFavorite(true);
-      dispatch(addToFavorites(moovie));
+      dispatch(addToFavorites(movie));
     }
   };
   return (
-    <Styled.MoovieCard>
+    <Styled.movieCard>
       <CardMedia
         component="img"
         max-height="442"
-        image={moovie.Poster}
-        alt={moovie.Title}
+        image={movie.Poster}
+        alt={movie.Title}
       />
-      <Styled.MoovieContent>
+      <Styled.movieContent>
         <Typography gutterBottom variant="h5" component="div">
-          {moovie.Title}
+          {movie.Title}
         </Typography>
         <Styled.SubTitles>
           Year:
           <Typography>
-            {moovie.Year}
+            {movie.Year}
           </Typography>
         </Styled.SubTitles>
         <Styled.SubTitles>
           Actors:
           <Typography>
-            {moovie.Actors}
+            {movie.Actors}
           </Typography>
         </Styled.SubTitles>
         <Styled.SubTitles>
           Awards:
           <Typography>
-            {moovie.Awards}
+            {movie.Awards}
           </Typography>
         </Styled.SubTitles>
 
         <Styled.SubTitles>
           Plot:
           <Typography>
-            {moovie.Plot}
+            {movie.Plot}
           </Typography>
         </Styled.SubTitles>
         <Styled.SubTitles>
           Ratings:
           <Typography color="warn">
-            {moovie.Ratings.map((rating) => {
+            {movie.Ratings.map((rating) => {
               return (
                 <Typography key={rating.Source}>
                   {rating.Source}: {rating.Value}
@@ -93,10 +93,10 @@ const MooviePage: React.FC = () => {
         </Styled.SubTitles>
         <Styled.Favorites>
           Favorites:
-          <FavoriteCheckbox onClick={handleFavorite} checked={isFavorite } />
+          <FavoriteCheckbox onClick={handleFavorite} checked={isFavorite} />
         </Styled.Favorites>
-      </Styled.MoovieContent>
-    </Styled.MoovieCard>
+      </Styled.movieContent>
+    </Styled.movieCard>
   );
 }
-export default MooviePage;
+export default MoviePage;
