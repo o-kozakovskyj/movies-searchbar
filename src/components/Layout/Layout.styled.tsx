@@ -1,9 +1,39 @@
+import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
+import Logo from '../Logo';
 
-export const LayoutBox = styled(Box)`
+export const Header = styled(props => <Box component="header" {...props} />)`
+  background-color: #fff;
+  padding: 20px;
+`;
+export const HeaderContent = styled(Container)`
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  height: 100vh;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
+export const MainSection = styled(props => (
+  <Container component="main">
+    <Grid container spacing={1} {...props} />
+  </Container>
+))`
+  margin-top: 0px;
+`;
+
+export const AsideSection = styled(props => <Grid item xs={2.2} component="aside" {...props} />)`
+  padding-left: 0 !important;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const CenterSection = styled(props => <Grid item xs={9.6} {...props} />)`
+  margin-bottom: 8px;
+  align-items: center;
 `;

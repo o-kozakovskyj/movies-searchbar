@@ -4,14 +4,16 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 import { combineReducers } from "redux";
+import favoritesReducer from '../src/components/MooviePage/MoovieSlice';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
+  favorites: favoritesReducer,
 });
 const persistConfig = {
-  key: 'cart',
+  key: 'favoriteList',
   storage,
 }
 const persistedReducer = persistReducer(persistConfig, reducers)

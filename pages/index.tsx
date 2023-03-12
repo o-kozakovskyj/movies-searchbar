@@ -1,10 +1,14 @@
+import FavoriteList from '../src/components/FavoriteList';
 import Layout from '../src/components/Layout';
+import SearchBar from '../src/components/SearchBox';
+import type { NextPage } from 'next';
+import MoovieList from '../src/components/MooviesList';
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
     <>
-      <Layout>
-        <div>hello</div>
+      <Layout aside={<FavoriteList />}>
+        <MoovieList/>
       </Layout>
     </>
   )
