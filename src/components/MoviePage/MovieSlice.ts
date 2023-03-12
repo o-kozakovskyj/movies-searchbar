@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../../../redux/store';
-import type movie from '../../entitles/movie';
+import type Movie from '../../entitles/Movie';
 
 export type FavoriteListState = {
-  favorites: movie[];
+  favorites: Movie[];
 };
 
 const initialState: FavoriteListState = {
@@ -14,7 +14,7 @@ export const favoritesSlice = createSlice({
   name: 'favorites',
   initialState,
   reducers: {
-    addToFavorites: (state, action: PayloadAction<movie>) => {
+    addToFavorites: (state, action: PayloadAction<Movie>) => {
       if (state.favorites.find((movie) => movie.imdbID === action.payload.imdbID)) {
         return;
       }

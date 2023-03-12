@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getmovie } from "../../gateways/gateway";
 import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
 import { addToFavorites, deleteFromFavorites, selectFavorites } from "../MoviePage/MovieSlice";
-import type movie from "../../entitles/movie";
+import type movie from "../../entitles/Movie";
 import * as Styled from "./MoviePage.styled";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";

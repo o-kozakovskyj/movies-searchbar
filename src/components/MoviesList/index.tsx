@@ -2,10 +2,10 @@ import { Box } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import type Movie from "../../entitles/movie";
+import type Movie from "../../entitles/Movie";
 import { getmovies } from "../../gateways/gateway";
 import MovieInList from "../MovieInList";
-import * as Styled from "./MoviesList.styled"
+import * as Styled from "./MoviesList.styled";
 
 const MoviesList: React.FC = () => {
   const search = useRouter().query.search as string;

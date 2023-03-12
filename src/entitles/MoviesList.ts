@@ -1,4 +1,4 @@
-import Movie from "./movie";
+import Movie from "./Movie";
 
 export type MoviesList = {
   Search: Movie[];

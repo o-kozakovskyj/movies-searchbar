@@ -1,6 +1,6 @@
 import { Skeleton, Typography } from "@mui/material";
 import Image from "next/image";
-import Movie from "../../entitles/movie";
+import Movie from "../../entitles/Movie";
 import * as Styled from "./MovieInList.styled";
 
 type MovieProps = {

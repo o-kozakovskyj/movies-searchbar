@@ -1,6 +1,6 @@
 import axios from "axios";
 import type { MoviesList } from "../entitles/MoviesList";
-import type movie from "../entitles/movie";
+import type movie from "../entitles/Movie";
 
 const KEY = "d31d01b9";
 const URL = "http://www.omdbapi.com/?apikey=";
