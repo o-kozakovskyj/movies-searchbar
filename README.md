@@ -4,6 +4,7 @@ You can search for movies by title.
 If you want to see more information about the movie, click on the movie card.
 If you want to add the movie to your favorites, click on the star icon - it becames yellow.
 If you want to remove the movie from your favorites, click on the yellow star icon - it becames white.
+After page reload, your favorite movies will be saved.
 If you want to see your favorite movie, click on movie from My favorite list.
 ### [Site link](https://vercel.com/o-kozakovskyj/digital-shop)
 -Layout supports all mobile and desktop versions
