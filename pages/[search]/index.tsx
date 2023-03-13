@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import MoviesList from "@/components/MoviesList";
 import { NextPage } from "next";
 
-
 const SerchedMovies: NextPage = () => {
   return (
     <>

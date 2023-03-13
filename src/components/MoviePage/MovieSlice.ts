@@ -15,13 +15,15 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, action: PayloadAction<Movie>) => {
-      if (state.favorites.find((movie) => movie.imdbID === action.payload.imdbID)) {
+      if (state.favorites
+        .find((movie) => movie.imdbID === action.payload.imdbID)) {
         return;
       }
       state.favorites.push({ ...action.payload });
     },
     deleteFromFavorites: (state, action) => {
-      state.favorites = state.favorites.filter((movie) => movie.imdbID !== action.payload);
+      state.favorites = state
+        .favorites.filter((movie) => movie.imdbID !== action.payload);
     },
   },
 });

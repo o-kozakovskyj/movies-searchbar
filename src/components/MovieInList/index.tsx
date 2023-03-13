@@ -17,7 +17,6 @@ const MovieInList: React.FC<MovieProps> = ({ movie }) => {
   const poster = movie.Poster === "N/A"
     ? noPoster
     : <Image src={movie.Poster} alt={movie.Title} height={150} width={100} />
-
   return (
     <Styled.moviesListBox>
       <Styled.ImageBox>

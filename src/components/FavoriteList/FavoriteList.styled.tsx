@@ -13,7 +13,6 @@ height: 100%;
 export const movieInfo = styled(Box)`
   display: flex;
   align-items: center;
-  
   .MuiTypography-root {
     font-size: 10px;
     margin: 4px;
@@ -21,7 +20,6 @@ export const movieInfo = styled(Box)`
     overflow: hidden;
   }
 `;
-
 export const AsideTitle = styled(Typography)`
   font-weight: 700;
   margin-bottom: 10px;

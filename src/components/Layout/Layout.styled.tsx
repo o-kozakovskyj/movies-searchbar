@@ -25,7 +25,12 @@ export const MainSection = styled(props => (
   margin-top: 0px;
 `;
 
-export const AsideSection = styled(props => <Grid item xs={2.2} component="aside" {...props} />)`
+export const AsideSection = styled(props => <Grid item
+  xs={2.2}
+  component="aside"
+  {...props}
+/>
+)`
   padding-left: 0 !important;
   @media (max-width: 600px) {
     display: none;

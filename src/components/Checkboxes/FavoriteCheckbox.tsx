@@ -2,7 +2,6 @@ import { Star, StarBorder } from '@mui/icons-material';
 import { Checkbox } from '@mui/material';
 import styled from 'styled-components';
 
-
 const FavoriteCheckbox = styled(props => {
   return (
     <Checkbox
@@ -26,5 +25,4 @@ const FavoriteCheckbox = styled(props => {
     }
   }
 `;
-
 export default FavoriteCheckbox;

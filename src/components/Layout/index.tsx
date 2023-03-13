@@ -16,12 +16,14 @@ const Layout: React.FC<LayoutProps> = ({ children, aside }) => {
         </Styled.HeaderContent>
       </Styled.Header>
       <Styled.MainSection>
-        <Styled.AsideSection>{aside}</Styled.AsideSection>
-        <Styled.CenterSection>{children}</Styled.CenterSection>
+        <Styled.AsideSection>
+          {aside}
+        </Styled.AsideSection>
+        <Styled.CenterSection>
+          {children}
+        </Styled.CenterSection>
       </Styled.MainSection>
     </>
-
-
   )
 }
 export default Layout;

@@ -9,7 +9,10 @@ const SearchBox: React.FC = () => {
   }
   return (
     <Styled.SearchBox >
-      <Styled.SearchInput value={search} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setSearch(e.target.value) } />
+      <Styled.SearchInput
+        value={search}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+      />
       <Styled.SearchButton  onClick={handleSearchRedirect}/>
     </Styled.SearchBox>
   )
