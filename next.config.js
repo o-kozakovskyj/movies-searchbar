@@ -11,7 +11,7 @@ const nextConfig = {
     ],
   },
   env: {
-    API_URL: "http://www.omdbapi.com/?apikey=",
+    API_URL: "https://www.omdbapi.com/?apikey=",
     API_KEY: "d31d01b9",
   },
 }
