@@ -4,7 +4,7 @@ import * as Styled  from "./SearchBox.styled";
 const SearchBox: React.FC = () => {
   const [search, setSearch] = useState("");
   const handleSearchRedirect = () => {
-    window.location.href = `/${search}`;
+    window.location.replace(`/${search}`);
     setSearch("");
   }
   return (
