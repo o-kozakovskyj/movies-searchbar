@@ -2,7 +2,6 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  output: 'export',
   reactStrictMode: true,
   swcMinify: true,
   images: {
@@ -11,7 +10,6 @@ const nextConfig = {
       'm.media-amazon.com',
     ],
   },
-  trailingSlash: true,
   env: {
     API_URL: "http://www.omdbapi.com/?apikey=",
     API_KEY: "d31d01b9",
