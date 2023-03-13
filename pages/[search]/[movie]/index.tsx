@@ -1,7 +1,7 @@
+import FavoriteList from "@/components/FavoriteList";
+import Layout from "@/components/Layout";
+import MoviePage from "@/components/MoviePage";
 import { NextPage } from "next";
-import FavoriteList from "../../src/components/FavoriteList";
-import Layout from "../../src/components/Layout";
-import MoviePage from "../../src/components/MoviePage";
 
 const SerchedMovies: NextPage = () => {
   return (
