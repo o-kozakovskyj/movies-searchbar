@@ -1,7 +1,7 @@
+import Movie from "@/entitles/Movie";
 import { Divider, Link, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectFavorites } from "../MoviePage/MovieSlice";
-import type Movie from "../../entitles/Movie";
 import * as Styled from "./FavoriteList.styled";
 
 const FavoriteList: React.FC = () => {

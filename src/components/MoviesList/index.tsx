@@ -1,9 +1,9 @@
+import { getmovies } from "@/gateways/gateway";
 import { Box } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import type Movie from "../../entitles/Movie";
-import { getmovies } from "../../gateways/gateway";
+import Movie from "@/entitles/Movie";
 import MovieInList from "../MovieInList";
 import * as Styled from "./MoviesList.styled";
 
@@ -29,7 +29,7 @@ const MoviesList: React.FC = () => {
       {list.map((movie: Movie) => {
         return (
           <Box key={movie.imdbID}>
-            <Link href={`/${search}/${movie.imdbID}`} >
+            <Link href={`/${search}/${movie.imdbID}`} passHref legacyBehavior>
               <Styled.LinkAnchor>
                 <MovieInList movie={movie} key={movie.imdbID} />
               </Styled.LinkAnchor>

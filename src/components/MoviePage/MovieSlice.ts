@@ -1,6 +1,6 @@
+import Movie from '@/entitles/Movie';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { RootState } from '../../../redux/store';
-import type Movie from '../../entitles/Movie';
+import { RootState } from 'redux/store';
 
 export type FavoriteListState = {
   favorites: Movie[];

@@ -1,17 +1,17 @@
 import { CardMedia, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { getmovie } from "../../gateways/gateway";
 import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
 import { addToFavorites, deleteFromFavorites, selectFavorites } from "../MoviePage/MovieSlice";
-import type movie from "../../entitles/Movie";
-import * as Styled from "./MoviePage.styled";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { getmovie } from "@/gateways/gateway";
+import Movie from "@/entitles/Movie";
+import * as Styled from "./MoviePage.styled";
 
 const MoviePage: React.FC = () => {
   const movieId = useRouter().query.movie as string;
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
-  const [movie, setmovie] = useState<movie>({
+  const [movie, setmovie] = useState<Movie>({
     Title: "",
     Year: "",
     imdbID: "",
@@ -28,7 +28,7 @@ const MoviePage: React.FC = () => {
         setmovie(res);
       });
     }
-    if (favoriteList.find((movie: movie) => movie.imdbID === movieId)) {
+    if (favoriteList.find((movie: Movie) => movie.imdbID === movieId)) {
       setIsFavorite(true);
     }
   }, [movieId, movie, isFavorite, favoriteList]);
