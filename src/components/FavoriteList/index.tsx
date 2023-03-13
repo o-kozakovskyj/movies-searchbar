@@ -6,7 +6,6 @@ import * as Styled from "./FavoriteList.styled";
 
 const FavoriteList: React.FC = () => {
   const favoriteList = useSelector(selectFavorites);
-
   return (
     <Styled.FavoriteListBox>
       <Styled.AsideTitle>
@@ -33,7 +32,6 @@ const FavoriteList: React.FC = () => {
           </Link>
         )
       })}
-
     </Styled.FavoriteListBox>
   )
 }
