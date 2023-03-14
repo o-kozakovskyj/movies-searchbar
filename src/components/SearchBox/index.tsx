@@ -7,11 +7,17 @@ const SearchBox: React.FC = () => {
     window.location.replace(`/${search}`);
     setSearch("");
   }
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearchRedirect();
+    }
+  }
   return (
     <Styled.SearchBox >
       <Styled.SearchInput
         value={search}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
       <Styled.SearchButton  onClick={handleSearchRedirect}/>
     </Styled.SearchBox>
