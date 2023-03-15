@@ -26,12 +26,13 @@ const MoviePage: React.FC = () => {
     if (movieId) {
       getmovie(movieId).then((res) => {
         setmovie(res);
+        setSrc(movie.Poster);
       });
     }
     if (favoriteList.find((movie: Movie) => movie.imdbID === movieId)) {
       setIsFavorite(true);
     }
-  }, [movieId, movie, isFavorite, favoriteList]);
+  }, [movieId, movie, isFavorite, favoriteList, movie.Poster]);
   const dispatch = useDispatch();
   const handleFavorite = () => {
     if (isFavorite) {
@@ -42,10 +43,11 @@ const MoviePage: React.FC = () => {
       dispatch(addToFavorites(movie));
     }
   };
-  const [src, setSrc] = useState(movie.Poster);
+  const [src, setSrc] = useState("https://via.placeholder.com/300x500?text=NO+Poster+Found");
   const handleImageError = () => {
     setSrc("https://via.placeholder.com/300x500?text=NO+Poster+Found");
   };
+ 
   return (
     <Styled.movieCard>
       <Image
