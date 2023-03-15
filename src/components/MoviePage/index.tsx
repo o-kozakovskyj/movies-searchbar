@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { getmovie } from "@/gateways/gateway";
 import Movie from "@/entitles/Movie";
 import * as Styled from "./MoviePage.styled";
+import FALLBACK_URL from "@/data/falbackUrl";
 
 const MoviePage: React.FC = () => {
   const movieId = useRouter().query.movie as string;
@@ -21,7 +22,11 @@ const MoviePage: React.FC = () => {
     Ratings: [],
     Awards: "",
   });
+  const [src, setSrc] = useState(FALLBACK_URL);
   const favoriteList = useSelector(selectFavorites);
+  const handleImageError = () => {
+    setSrc(FALLBACK_URL);
+  };
   useEffect(() => {
     if (movieId) {
       getmovie(movieId).then((res) => {
@@ -43,18 +48,14 @@ const MoviePage: React.FC = () => {
       dispatch(addToFavorites(movie));
     }
   };
-  const [src, setSrc] = useState("https://via.placeholder.com/300x500?text=NO+Poster+Found");
-  const handleImageError = () => {
-    setSrc("https://via.placeholder.com/300x500?text=NO+Poster+Found");
-  };
- 
+  
   return (
     <Styled.movieCard>
       <Image
         width={160}
         height={280}
         alt={movie.Title}
-        onError={handleImageError}
+        onErrorCapture={handleImageError}
         src={src === "N/A" ? "https://via.placeholder.com/100x200?text=NO+Poster+Found" : src}
       />
       <Styled.MovieContent>
