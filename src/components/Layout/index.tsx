@@ -8,7 +8,7 @@ type LayoutProps = {
 };
 const Layout: React.FC<LayoutProps> = ({ children, aside }) => {
   return (
-    <>
+    <Styled.AppContainer>
       <Styled.Header>
         <Styled.HeaderContent>
           <Logo />
@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, aside }) => {
           {children}
         </Styled.CenterSection>
       </Styled.MainSection>
-    </>
+    </Styled.AppContainer>
   )
 }
 export default Layout;

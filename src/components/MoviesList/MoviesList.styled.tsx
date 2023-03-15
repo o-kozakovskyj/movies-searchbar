@@ -6,6 +6,9 @@ export const MoviesListBox = styled(List)`
   width: 100%;
   flex-wrap: wrap;
   padding: 0;
+  @media (max-width: 600px) {
+    justify-content: space-around;
+  }
 `;
 export const NoResultText = styled(Typography)`
   font-size: 20px;
