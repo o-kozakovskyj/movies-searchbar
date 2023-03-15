@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import Image, { ImageProps } from 'next/image';
+import Link from "next/link";
 
 export const FavoriteListBox = styled(Box)`
 display: flex;
@@ -27,7 +28,7 @@ export const Poster = styled((props: ImageProps) => (
 ))`
   margin-left: 4px;
 `;
-export const LinkAnchor = styled.a`
+export const LinkAnchor = styled(Link)`
   text-decoration: none;
-  color: #000;
+  color: inherit;
 `

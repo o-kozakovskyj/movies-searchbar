@@ -1,8 +1,7 @@
-import { CardMedia, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
 import { addToFavorites, deleteFromFavorites, selectFavorites } from "../MoviePage/MovieSlice";
-import { SyntheticEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { getmovie } from "@/gateways/gateway";
@@ -43,10 +42,9 @@ const MoviePage: React.FC = () => {
       dispatch(addToFavorites(movie));
     }
   };
-  const handleImageError = (e: any ) => {
+  const handleImageError = (e: any) => {
     e.target.src = "https://via.placeholder.com/100x200?text=NO+Poster+Found";
   };
-  
   return (
     <Styled.movieCard>
       <Image
@@ -54,49 +52,37 @@ const MoviePage: React.FC = () => {
         height={280}
         alt={movie.Title}
         onError={handleImageError}
-        src={movie.Poster}
-       />
-      <Styled.movieContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {movie.Title}
-        </Typography>
-        <Styled.SubTitles>
+        src={movie.Poster === "N/A" ? "https://via.placeholder.com/100x200?text=NO+Poster+Found" : movie.Poster}
+      />
+      <Styled.MovieContent>
+        <Styled.MovieTitle>{movie.Title}</Styled.MovieTitle>
+        <Styled.Title>
           Year:
-          <Typography>
-            {movie.Year}
-          </Typography>
-        </Styled.SubTitles>
-        <Styled.SubTitles>
+          <Styled.SubTitle>{movie.Year}</Styled.SubTitle>
+        </Styled.Title>
+        <Styled.Title>
           Actors:
-          <Typography>
-            {movie.Actors}
-          </Typography>
-        </Styled.SubTitles>
-        <Styled.SubTitles>
+          <Styled.SubTitle>{movie.Actors}</Styled.SubTitle>
+        </Styled.Title>
+        <Styled.Title>
           Awards:
-          <Typography>
-            {movie.Awards}
-          </Typography>
-        </Styled.SubTitles>
-
-        <Styled.SubTitles>
+          <Styled.SubTitle>{movie.Awards === 'N/A' ? "-" : movie.Awards }</Styled.SubTitle>
+        </Styled.Title>
+        <Styled.Title>
           Plot:
-          <Typography>
-            {movie.Plot}
-          </Typography>
-        </Styled.SubTitles>
-        <Styled.SubTitles>
-          Ratings:
-          <Typography color="warn">
+          <Styled.SubTitle>{movie.Plot === "N/A" ? "-" : movie.Plot}</Styled.SubTitle>
+        </Styled.Title>
+        <Styled.Title> Ratings:
+          <Styled.SubTitle >
             {movie.Ratings.map((rating) => {
               return (
-                <Typography key={rating.Source}>
-                  {rating.Source}: {rating.Value}
-                </Typography>
+                <Styled.SubTitle key={rating.Source}>
+                  {rating.Source}: <Styled.Ratings>{rating.Value}</Styled.Ratings>
+                </Styled.SubTitle>
               );
             })}
-          </Typography>
-        </Styled.SubTitles>
+          </Styled.SubTitle>
+        </Styled.Title>
         <Styled.Favorites>
           Favorites:
           <FavoriteCheckbox
@@ -104,7 +90,7 @@ const MoviePage: React.FC = () => {
             checked={isFavorite}
           />
         </Styled.Favorites>
-      </Styled.movieContent>
+      </Styled.MovieContent>
     </Styled.movieCard>
   );
 }

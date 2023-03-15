@@ -14,11 +14,10 @@ const FavoriteList: React.FC = () => {
       <Divider />
       {favoriteList.map((movie: Movie) => {
         return (
-          <Link
+          <Styled.LinkAnchor
             href={`/${movie.Title}/${movie.imdbID}`}
             key={movie.imdbID}
           >
-            <Styled.LinkAnchor>
               <Styled.movieInfo >
                 <Styled.Poster
                   src={movie.Poster}
@@ -27,9 +26,8 @@ const FavoriteList: React.FC = () => {
                 <Typography>
                   {movie.Title}
                 </Typography>
-              </Styled.movieInfo>
-            </Styled.LinkAnchor>
-          </Link>
+              </Styled.movieInfo>           
+          </Styled.LinkAnchor>
         )
       })}
     </Styled.FavoriteListBox>

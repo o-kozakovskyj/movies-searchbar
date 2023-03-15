@@ -1,4 +1,5 @@
 import { List, Typography } from "@mui/material";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const MoviesListBox = styled(List)`
@@ -14,13 +15,7 @@ export const NoResultText = styled(Typography)`
   text-align: center;
   margin: 20px 0;
 `;
-export const LinkAnchor = styled.a`
-  color: #5a5a5e;
-  text-decoration: none;
-  font-size: 0.8rem;
-  padding:0;
-  margin: 0;
-  &:hover {
-    text-decoration: none;
-  }
+export const LinkAnchor = styled((props) => <Link {...props} />)`
+text-decoration: none;
+color: inherit;
 `;

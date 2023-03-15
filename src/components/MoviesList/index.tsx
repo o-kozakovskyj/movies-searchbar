@@ -29,15 +29,9 @@ const MoviesList: React.FC = () => {
       {list.map((movie: Movie) => {
         return (
           <Box key={movie.imdbID}>
-            <Link
-              href={`/${search}/${movie.imdbID}`}
-              passHref
-              legacyBehavior
-            >
-              <Styled.LinkAnchor>
-                <MovieInList movie={movie} key={movie.imdbID} />
-              </Styled.LinkAnchor>
-            </Link>
+            <Styled.LinkAnchor href={`/${search}/${movie.imdbID}`}>
+              <MovieInList movie={movie} key={movie.imdbID} />
+            </Styled.LinkAnchor>
           </Box>
         )
       })}
