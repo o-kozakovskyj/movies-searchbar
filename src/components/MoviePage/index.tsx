@@ -42,8 +42,9 @@ const MoviePage: React.FC = () => {
       dispatch(addToFavorites(movie));
     }
   };
-  const handleImageError = (e: any) => {
-    e.target.src = "https://via.placeholder.com/100x200?text=NO+Poster+Found";
+  const [src, setSrc] = useState(movie.Poster);
+  const handleImageError = () => {
+    setSrc("https://via.placeholder.com/300x500?text=NO+Poster+Found");
   };
   return (
     <Styled.movieCard>
@@ -52,7 +53,7 @@ const MoviePage: React.FC = () => {
         height={280}
         alt={movie.Title}
         onError={handleImageError}
-        src={movie.Poster === "N/A" ? "https://via.placeholder.com/100x200?text=NO+Poster+Found" : movie.Poster}
+        src={src === "N/A" ? "https://via.placeholder.com/100x200?text=NO+Poster+Found" : src}
       />
       <Styled.MovieContent>
         <Styled.MovieTitle>{movie.Title}</Styled.MovieTitle>
