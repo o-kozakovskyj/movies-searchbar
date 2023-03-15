@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
 import { addToFavorites, deleteFromFavorites, selectFavorites } from "../MoviePage/MovieSlice";
 import { SyntheticEvent, useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { getmovie } from "@/gateways/gateway";
 import Movie from "@/entitles/Movie";
@@ -43,19 +44,17 @@ const MoviePage: React.FC = () => {
     }
   };
   const handleImageError = (e: any ) => {
-    e.target.src = "https://via.placeholder.com/300x500?text=NO+Poster+Found";
+    e.target.src = "https://via.placeholder.com/100x200?text=NO+Poster+Found";
   };
   
   return (
     <Styled.movieCard>
-      <CardMedia
-        component="img"
-        max-height="442"
-        image={movie.Poster}
+      <Image
+        width={160}
+        height={280}
         alt={movie.Title}
         onError={handleImageError}
         src={movie.Poster}
-        
        />
       <Styled.movieContent>
         <Typography gutterBottom variant="h5" component="div">

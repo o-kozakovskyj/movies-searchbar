@@ -2,8 +2,8 @@ import { Card, CardContent, Typography } from "@mui/material";
 import styled from "styled-components";
 
 export const movieCard = styled(Card)`
-margin: 0 auto;
 display: flex;
+margin: 0 20px;
 @media (max-width: 800px) {
   flex-direction: column;
 }

@@ -3,12 +3,10 @@ import styled from "styled-components";
 
 export const MoviesListBox = styled(List)`
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
   padding: 0;
-  @media (max-width: 600px) {
-    justify-content: space-around;
-  }
+  justify-content: center;
+  align-items: center;
 `;
 export const NoResultText = styled(Typography)`
   font-size: 20px;

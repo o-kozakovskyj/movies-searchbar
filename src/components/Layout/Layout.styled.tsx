@@ -25,7 +25,7 @@ export const HeaderContent = styled(Container)`
 
 export const MainSection = styled(props => (
   <Container component="main">
-    <Grid container spacing={1} {...props} />
+    <Grid container spacing={1} {...props} sx={{display: "flex", justifyContent: "center"}} />
   </Container>
 ))`
   margin-top: 0px;
@@ -39,7 +39,7 @@ export const AsideSection = styled(props => <Grid item
 )`
   padding-left: 0 !important;
 
-  @media (max-width: 600px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;

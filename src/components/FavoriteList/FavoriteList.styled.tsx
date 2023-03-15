@@ -5,17 +5,13 @@ import Image, { ImageProps } from 'next/image';
 export const FavoriteListBox = styled(Box)`
 display: flex;
 white-space: nowrap;
-
 flex-direction: column;
-width: 100%;
-height: 100%;
-padding: 0 0 0 30px;
+padding: 0 0 0 24px;
 `;
 export const movieInfo = styled(Box)`
   display: flex;
   align-items: center;
   .MuiTypography-root {
-    font-size: 10px;
     margin: 4px;
     text-overflow: ellipsis;
     overflow: hidden;
