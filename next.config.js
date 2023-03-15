@@ -8,6 +8,7 @@ const nextConfig = {
     // TODO: Remove this domain after mock data removed
     domains: [
       'm.media-amazon.com',
+      'via.placeholder.com',
     ],
   },
   env: {

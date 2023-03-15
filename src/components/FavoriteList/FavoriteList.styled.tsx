@@ -9,6 +9,7 @@ white-space: nowrap;
 flex-direction: column;
 width: 100%;
 height: 100%;
+padding: 0 0 0 24px;
 `;
 export const movieInfo = styled(Box)`
   display: flex;
@@ -22,7 +23,7 @@ export const movieInfo = styled(Box)`
 `;
 export const AsideTitle = styled(Typography)`
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 export const Poster = styled((props: ImageProps) => (
   // eslint-disable-next-line jsx-a11y/alt-text

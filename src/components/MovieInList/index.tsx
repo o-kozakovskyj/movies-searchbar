@@ -1,26 +1,26 @@
-import { Skeleton, Typography } from "@mui/material";
 import Image from "next/image";
 import Movie from "@/entitles/Movie";
 import * as Styled from "./MovieInList.styled";
+import { useState } from "react";
 
 type MovieProps = {
   movie: Movie
 }
 const MovieInList: React.FC<MovieProps> = ({ movie }) => {
-  const noPoster = <>
-    <Skeleton variant="rectangular" width="100px" height="60px" />
-    <Typography variant="h6">
-      No Poster
-    </Typography>
-    <Skeleton variant="rectangular" width="100px" height="60px" />
-  </>
-  const poster = movie.Poster === "N/A"
-    ? noPoster
-    : <Image src={movie.Poster} alt={movie.Title} height={150} width={100} />
+  const handleImageError = () => {
+    setSrc("https://via.placeholder.com/300x500?text=NO+Poster+Found");
+  };
+  const [src, setSrc] = useState(movie.Poster);
   return (
     <Styled.moviesListBox>
-      <Styled.ImageBox>
-        {poster}
+      <Styled.ImageBox >
+        <Image
+          src={src === 'N/A' ? 'https://via.placeholder.com/300x500?text=NO+Poster+Found' : src}
+          alt={movie.Title}
+          onError={handleImageError}
+          width={100}
+          height={180}
+        />
         <Styled.Title>
           {movie.Actors}
         </Styled.Title>

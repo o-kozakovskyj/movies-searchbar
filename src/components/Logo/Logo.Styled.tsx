@@ -5,7 +5,7 @@ export const LogoBox = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 40px 0 0;
   `;
 export const LogoTv = styled(Typography)`
   font-size: 1.5rem;

@@ -2,7 +2,7 @@ import { CardMedia, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import FavoriteCheckbox from "../Checkboxes/FavoriteCheckbox";
 import { addToFavorites, deleteFromFavorites, selectFavorites } from "../MoviePage/MovieSlice";
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getmovie } from "@/gateways/gateway";
 import Movie from "@/entitles/Movie";
@@ -42,6 +42,10 @@ const MoviePage: React.FC = () => {
       dispatch(addToFavorites(movie));
     }
   };
+  const handleImageError = (e: any ) => {
+    e.target.src = "https://via.placeholder.com/300x500?text=NO+Poster+Found";
+  };
+  
   return (
     <Styled.movieCard>
       <CardMedia
@@ -49,7 +53,10 @@ const MoviePage: React.FC = () => {
         max-height="442"
         image={movie.Poster}
         alt={movie.Title}
-      />
+        onError={handleImageError}
+        src={movie.Poster}
+        
+       />
       <Styled.movieContent>
         <Typography gutterBottom variant="h5" component="div">
           {movie.Title}
@@ -93,7 +100,10 @@ const MoviePage: React.FC = () => {
         </Styled.SubTitles>
         <Styled.Favorites>
           Favorites:
-          <FavoriteCheckbox onClick={handleFavorite} checked={isFavorite} />
+          <FavoriteCheckbox
+            onClick={handleFavorite}
+            checked={isFavorite}
+          />
         </Styled.Favorites>
       </Styled.movieContent>
     </Styled.movieCard>
