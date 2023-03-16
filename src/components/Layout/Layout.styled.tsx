@@ -38,8 +38,7 @@ export const AsideSection = styled(props => <Grid item
 />
 )`
   padding-left: 0 !important;
-
-  @media (max-width: 780px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

@@ -47,17 +47,18 @@ const MoviePage: React.FC = () => {
       setIsFavorite(true);
       dispatch(addToFavorites(movie));
     }
-  };
-  
+  }; 
   return (
     <Styled.movieCard>
-      <Image
-        width={160}
-        height={280}
+      <Styled.PosterBox>
+        <Image
+        fill
         alt={movie.Title}
         onErrorCapture={handleImageError}
         src={src === "N/A" ? "https://via.placeholder.com/100x200?text=NO+Poster+Found" : src}
       />
+      </Styled.PosterBox>
+      
       <Styled.MovieContent>
         <Styled.MovieTitle>{movie.Title}</Styled.MovieTitle>
         <Styled.Title>
