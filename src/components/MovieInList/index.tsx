@@ -19,7 +19,7 @@ const MovieInList: React.FC<MovieProps> = ({ movie }) => {
           alt={movie.Title}
           onError={handleImageError}
           width={100}
-          height={180}
+          height={150}
           priority
         />
         <Styled.Title>
