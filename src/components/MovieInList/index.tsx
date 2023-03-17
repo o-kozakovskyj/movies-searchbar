@@ -1,21 +1,22 @@
 import Image from "next/image";
 import Movie from "@/entitles/Movie";
-import * as Styled from "./MovieInList.styled";
 import { useState } from "react";
+import FALLBACK_URL from "@/data/falbackUrl";
+import * as Styled from "./MovieInList.styled";
 
 type MovieProps = {
   movie: Movie
 }
 const MovieInList: React.FC<MovieProps> = ({ movie }) => {
   const handleImageError = () => {
-    setSrc("https://via.placeholder.com/300x500?text=NO+Poster+Found");
+    setSrc(FALLBACK_URL);
   };
   const [src, setSrc] = useState(movie.Poster);
   return (
     <Styled.moviesListBox>
       <Styled.ImageBox >
         <Image
-          src={src === 'N/A' ? 'https://via.placeholder.com/300x500?text=NO+Poster+Found' : src}
+          src={src === 'N/A' ? FALLBACK_URL : src}
           alt={movie.Title}
           onError={handleImageError}
           width={100}
