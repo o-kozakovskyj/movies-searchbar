@@ -15,11 +15,11 @@ export async function getServerSideProps(context: any) {
     }
   }
 }
-type SerchedMoviesProps = {
+type SearchedMoviesProps = {
     list: Movie[];
     search: string;
 }
-const SerchedMovies: NextPage<SerchedMoviesProps> = ({list, search}) => {
+const SearchedMovies: NextPage<SearchedMoviesProps> = ({list, search}) => {
   return (
     <>
       <Layout aside={<FavoriteList />}>
@@ -28,4 +28,4 @@ const SerchedMovies: NextPage<SerchedMoviesProps> = ({list, search}) => {
     </>
   )
 }
-export default SerchedMovies;
+export default SearchedMovies;
