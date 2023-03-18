@@ -29,9 +29,11 @@ export const Title = styled(Typography)`
   font-weight: 600;
   text-align: left;
   text-decoration: none;
+  margin-left: 2px;
   `;
 export const Year = styled(Typography)`
   font-size: 0.6rem;
   font-weight: 600;
   text-align: left;
+  margin-left: 2px;
   `;
