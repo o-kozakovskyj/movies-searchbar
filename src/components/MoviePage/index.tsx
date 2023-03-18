@@ -55,10 +55,9 @@ const MoviePage: React.FC = () => {
         fill
         alt={movie.Title}
         onErrorCapture={handleImageError}
-        src={src === "N/A" ? "https://via.placeholder.com/100x200?text=NO+Poster+Found" : src}
+        src={src === "N/A" ? FALLBACK_URL : src}
       />
       </Styled.PosterBox>
-      
       <Styled.MovieContent>
         <Styled.MovieTitle>{movie.Title}</Styled.MovieTitle>
         <Styled.Title>
